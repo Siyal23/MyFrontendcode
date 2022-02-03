@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Demo 2</title>
+    <script>
+        function test() {
+          h1aElement = document.getElementById("h1a");
+          p1Element = document.getElementById("p1");
+          temp = h1aElement.innerHTML;
+          h1aElement.innerHTML = p1Element.innerHTML;
+          p1Element.innerHTML = temp.toUpperCase();
+          
+        }
+      </script>
+  </head>
+  <body>
+    <h1 id="h1a">Hello JS with DOM 1</h1>
+    <h1 id="h1b">Hello JS with DOM 2</h1>
+    <p id="p1">This is Paragraph</p>
+   <button onclick="test()"> Push Button</button>
+  </body>
+</html>

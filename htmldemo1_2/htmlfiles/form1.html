@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Demo 1</title>
+  </head>
+  <body>
+    <h1>Regitration Form</h1>
+    <form action="" method="get">
+      <input list="currencies" name="currency">
+       
+      <input type="submit">
+    </form>
+    <hr>
+    <form action="display.html" method="get" >
+      <table>
+        <tr>
+          <td><label>User Name : </label></td>
+          <td><input type="text"  placeholder ="Enter Name" name="username" required pattern="[A-Za-z]{3,5}"/></td>
+        </tr>
+        <tr>
+          <td><label>UserID : </label></td>
+          <td><input type="text" name="userid" /></td>
+        </tr>
+        <tr>
+          <td><label>Password : </label></td>
+          <td><input type="password" name="pwd" /></td>
+        </tr>
+      </tr>
+      <tr>
+        <td><label>Email : </label></td>
+        <td><input type="email" name="email" /></td>
+      </tr>
+        <tr>
+          <td><label>Address : </label></td>
+          <td><textarea></textarea></td>
+        </tr>
+        <tr>
+          <td><label>AGE : </label></td>
+          <td><input type="number" max="100" min="50"></td>
+        </tr>
+        <tr>
+          <td><label>DOB : </label></td>
+          <td><input type="time"></td>
+        </tr>
+        <tr>
+          <td><label>DOB : </label></td>
+          <td><input type="text" placeholder="dd-mm-yyyy"></td>
+        </tr>
+        <tr>
+          <td><label>Gender : </label></td>
+          <td><label for="male">Male </label><input type="radio" name="pwd" id="male"/> <label for="female">FeMale </label> <input type="radio" name="pwd" id="female"/></td>
+        </tr>
+        <tr>
+          <td><label>Academics : </label></td>
+          <td><select>
+            <option>Graduate</option>
+            <option>Post Graduate</option>
+            <option>PHP</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td><label>Buttons : </label></td>
+          <td><input type="submit" value="Save User" /></td>
+        </tr>
+      </table>
+    </form>
+    <datalist id="currencies">
+      <option value="United States Dollar">
+      <option value="Euro">
+      <option value="Japanese Yen">
+      <option value="Indian Rupee">
+      <option value="United Arab Emirates Dirham">
+      <option value="Philippine Peso">
+    </datalist>
+  </body>
+</html>

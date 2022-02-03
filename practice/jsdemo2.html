@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo 2</title>
+    <script>
+        /*window.onload=function(){
+            h1array=document.getElementsByTagName("h1")
+            console.log(h1array)
+            console.log(h1array[0])
+            h1val=h1array[0].innerHTML;
+            console.log(h1val)
+            h1array[0].innerHTML="WOW,I have changed"
+        }*/
+        function afterHTMLLoad(){
+            h1aElement=document.getElementById("h1a")
+            console.log(h1aElement)
+            h1aElement.innerHTML="WOW,JavaScript is easy"
+        }
+    </script>
+
+</head>
+<body onload="afterHTMLLoad()">
+    <h1 id="h1a">Hello JS with DOM 1</h1>
+    <h1 id="h2a">Hello JS with DOM 2</h1>
+    <p id="pa">This is paragraph</p>
+</body>
+</html>

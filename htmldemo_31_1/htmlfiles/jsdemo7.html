@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .aaa {
+        color: blue;
+        text-shadow: 2px 2px gray;
+      }
+      .bbb {
+        color: red;
+      }
+      tr:nth-child(even) {
+        background-color: gray;
+      }
+    </style>
+    <script>
+      function calc() {
+        n1 = document.getElementById("no1").value;
+        n11 = parseInt(n1);
+        n2 = document.getElementById("no2").value;
+        n22 = parseInt(n2);
+        opr = document.getElementById("op").value;
+        res = document.getElementById("result");
+        tresv = document.getElementById("tres");
+        switch (opr) {
+          case "+": {
+            total = n11 + n22;
+            res.innerHTML = total;
+            tresv.value = total;
+            if (total > 100) {
+              // res.style.color = "red";
+              res.className = "aaa";
+            } else {
+              res.className = "bbb";
+            }
+
+            break;
+          }
+          case "-": {
+            res.innerHTML = n11 - n22;
+            tresv.value = n11 - n22;
+
+            break;
+          }
+          case "/": {
+            res.innerHTML = n11 / n22;
+            break;
+          }
+          case "*": {
+            res.innerHTML = n11 * n22;
+            break;
+          }
+          default: {
+            res.innerHTML = "No Result";
+            break;
+          }
+        }
+      }
+      function showResult() {
+        var employees;
+
+        var akshay;
+        akshay = new XMLHttpRequest();
+        method = "GET";
+        url = "employees.json";
+        akshay.open(method, url, true);
+        akshay.onreadystatechange = function () {
+          console.log(akshay.readyState);
+          console.log(akshay.status);
+          if (akshay.readyState == 4 && akshay.status == 200) {
+            console.log(akshay.responseText);
+            emps = akshay.responseText;
+            employees = JSON.parse(emps);
+            console.log(typeof employees);
+            displayRecord(employees);
+          }
+        };
+        akshay.send();
+      }
+
+      function displayRecord(employees) {
+        for (index in employees) {
+          tr_ele = document.createElement("tr");
+          td1_ele = document.createElement("td");
+          td2_ele = document.createElement("td");
+          tr_ele.appendChild(td1_ele);
+          tr_ele.appendChild(td2_ele);
+          text1_ele = document.createTextNode(employees[index].ename);
+          td1_ele.appendChild(text1_ele);
+          text2_ele = document.createTextNode(employees[index].city);
+          td2_ele.appendChild(text2_ele);
+
+          document.getElementById("emprecord").appendChild(tr_ele);
+          document.getElementById("emprecord").className = "recordstyle";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    No1 : <input type="number" id="no1" /> <br />
+    No2 : <input type="number" id="no2" /> <br />
+    OP : <input type="text" id="op" /> <br />
+    <button onclick="calc()">Calculate</button>
+    <h1>Result : <span id="result"></span></h1>
+    <input type="text" id="tres" />
+    <input type="button" onclick="showResult()" value="Display result" />
+    <table id="emprecord"></table>
+  </body>
+</html>

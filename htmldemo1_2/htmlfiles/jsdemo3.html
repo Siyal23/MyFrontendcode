@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Demo 2</title>
+    <script>
+        function afterHTMLLoad() {
+          h1aElement = document.getElementById("h1a");
+          console.log(h1aElement);
+          alert("");
+          h1aElement.innerHTML = "Wow, JS is EAsy";
+         
+        }
+      </script>
+  </head>
+  <body onclick="afterHTMLLoad()">
+    <h1 id="h1a">Hello JS with DOM 1</h1>
+    <h1 id="h1b">Hello JS with DOM 2</h1>
+    <p id="p1">This is Paragraph</p>
+   
+  </body>
+</html>

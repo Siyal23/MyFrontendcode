@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      function calc() {
+        v1 = +$("#no1").val();
+        v2 = +$("#no2").val();
+        op = $("#op").val();
+
+        // ss =  prompt();
+        //  console.log(ss);
+        //  rs = eval(ss);
+        // console.log(rs);
+        // rs();
+        res = eval(v1 + op + v2);
+        $("#tres").val(res);
+        $("#result").text(res);
+
+        $("#score").load("score.txt");
+      }
+
+      function showResult() {
+        $.getJSON("employees.json", {}, function (data) {
+          console.log(data);
+          data.forEach((element) => {
+            $("#emprecord").append(
+              `<tr><td> ${element.ename}</td><td> ${element.city} </td></tr>`
+            );
+          });
+        });
+      }
+
+
+    </script>
+  </head>
+  <body>
+    No1 : <input type="number" id="no1" /> <br />
+    No2 : <input type="number" id="no2" /> <br />
+    OP : <input type="text" id="op" /> <br />
+    <button onclick="calc()">Calculate</button>
+    <h1>Result : <span id="result"></span></h1>
+    <input type="text" id="tres" />
+    <input type="text" id="tp"><span id="stp"></span>
+    <h1>Score is : <span id="score"></span></h1>
+    <input type="button" onclick="showResult()" value="Display result" />
+    <table id="emprecord"></table>
+
+
+    <script>
+        $("#tp").blur(()=>{
+            $("#stp").text($("#tp").val());
+        });
+    </script>
+  </body>
+</html>

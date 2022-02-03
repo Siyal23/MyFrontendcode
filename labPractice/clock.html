@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <script>
+        function clockFun(){
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            var m1=checkTime(m)
+            var s1=checkTime(s)
+            document.getElementById("clock").innerHTML=
+                h+":"+m1+":"+s;
+                setTimeout(clockFun, 1000);
+            document.getElementById()
+        }
+        function checkTime(min){
+            if(min<10){
+                min="0"+min
+            }
+            return min
+        }
+    </script>
+    <style>
+        #clock{
+            background-color: aquamarine;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="clockFun()">
+    <div id="myClock">
+        <p id="clock"></p>
+    </div>
+</body>
+</html>

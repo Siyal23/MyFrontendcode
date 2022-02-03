@@ -1,0 +1,41 @@
+h2 {
+  color: yellow;
+}
+h1,
+h2,
+span {
+  color: green;
+  text-align: center;
+  background-color: aqua;
+  text-shadow: 2px 2px gray;
+  border-style: double;
+  border-color: black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+ul li{
+  color:red;
+  list-style-image:url("../images/p1.jpg");
+  
+  
+}
+span {
+  color: rgb(235, 115, 67);
+}
+h1 {
+  color: blue;
+}
+p span {
+  color: #ff0000;
+}
+p::first-letter {
+  color: red;
+  font-size: 1in;
+  text-shadow: 2px 2px gray;
+}
+div:first-of-type p:first-of-type {
+  color: red;
+}
+.naushad {
+  color:red;
+}

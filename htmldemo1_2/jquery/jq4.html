@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function () {
+        // alert("HEllooooooooooooooo");
+        h1obj = $("h1").first();
+        console.log(h1obj);
+        $("#t1").keyup(function () {
+          name = $("#t1").val();
+          $("#msg").text(name).css("color","red");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="ha">This is H1</h1>
+    <h1>This is H1</h1>
+    <input type="text" id="t1" />
+    <span id="msg"></span>
+    <h1>This is H1</h1>
+  </body>
+</html>

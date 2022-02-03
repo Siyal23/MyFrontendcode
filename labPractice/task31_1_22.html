@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour the numbers</title>
+    <script>
+        function changeColor(){
+            num=document.getElementById("inputNum")
+            intNum=parseInt(num.value)
+            switch(intNum){
+                case 1:
+                    document.getElementById("one").style.backgroundColor="red"
+                    break
+                case 2:
+                    document.getElementById("two").style.backgroundColor="blue"
+                    break
+                case 3:
+                    document.getElementById("three").style.backgroundColor="green"
+                    break
+                case 4:
+                    document.getElementById("four").style.backgroundColor="yellow"
+                    break
+                case 5:
+                    document.getElementById("five").style.backgroundColor="pink"
+                    break
+                case 6:
+                    document.getElementById("six").style.backgroundColor="orange"
+                    break
+                case 7:
+                    document.getElementById("seven").style.backgroundColor="cyan"
+                    break
+                case 8:
+                    document.getElementById("eight").style.backgroundColor="voilet"
+                    break
+                case 9:
+                    document.getElementById("nine").style.backgroundColor="black"
+                    break
+            }
+        }
+        function resetColor()
+        {
+            num=document.getElementById("inputNum")
+            intNum=parseInt(num.value)
+            switch(intNum){
+                case 1:
+                    document.getElementById("one").style.backgroundColor="white"
+                    break
+                case 2:
+                    document.getElementById("two").style.backgroundColor="white"
+                    break
+                case 3:
+                    document.getElementById("three").style.backgroundColor="white"
+                    break
+                case 4:
+                    document.getElementById("four").style.backgroundColor="white"
+                    break
+                case 5:
+                    document.getElementById("five").style.backgroundColor="white"
+                    break
+                case 6:
+                    document.getElementById("six").style.backgroundColor="white"
+                    break
+                case 7:
+                    document.getElementById("seven").style.backgroundColor="white"
+                    break
+                case 8:
+                    document.getElementById("eight").style.backgroundColor="white"
+                    break
+                case 9:
+                    document.getElementById("nine").style.backgroundColor="white"
+            }
+        }
+    </script>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+    </style>
+      
+<body>
+    <div class="numbersTable">
+        <table id="numbers"> 
+            <thead>
+                <th>red</th>
+                <th>col1</th>
+                <th>col2</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="one">1</td>
+                    <td id="two">2</td>
+                    <td id="three">3</td>
+                </tr>
+                <tr>
+                    <td id="four">4</td>
+                    <td id="five">5</td>
+                    <td id="six">6</td>
+                </tr>
+                <tr>
+                    <td id="seven">7</td>
+                    <td id="eight">8</td>
+                    <td id="nine">9</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div>
+        <input type="number" id="inputNum"/><br>
+        <button onclick="changeColor()" onblur="resetColor()" >Click to highlight the number</button>
+    </div>
+</body>
+</html>

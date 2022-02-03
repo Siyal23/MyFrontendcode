@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      h1.aaa {
+        color: chocolate;
+      }
+      h1.bbb {
+        color: blue;
+      }
+      p {
+        color: red;
+      }
+      p .shadow {
+        text-shadow: 2px 2px gray;
+      }
+      #h1a {
+        background-color: cyan;
+      }
+      input {
+        color: red;
+        text-shadow: 2px 2px gray;
+        text-align: center;
+        align-self: center;
+      }
+      div {
+        text-align: center;
+      }
+      .float-container {
+        border: 3px solid #fff;
+        padding: 20px;
+      }
+
+      .float-child {
+        width: 50%;
+        float: left;
+        padding: 20px;
+        border: 2px solid red;
+      }
+      input[type="password"]  {
+          color:blue;
+          
+      }
+
+    </style>
+    <!-- <link rel="stylesheet" href="../css/mystyle.css"> -->
+  </head>
+  <body>
+    <div class="float-container">
+      <div class="float-child">
+        <div class="green">Float Column 1</div>
+      </div>
+
+      <div class="float-child">
+        <div class="blue">Float Column 2</div>
+      </div>
+    </div>
+
+    <div>
+      <div align="center">
+        <input type="text" />
+      </div>
+      <div>
+        <input type="password" />
+      </div>
+    </div>
+
+    <form align="center">
+      <input type="text" /> <br />
+      <input type="text" />
+    </form>
+    <h1 class="bbb xyz" id="h1a">This is H1</h1>
+    <h2 class="bbb" id="" id="h2a">This is H2</h2>
+    <h1 class="aaa" id="h1b">This is H1</h1>
+    <h2 class="xyz">This is H2</h2>
+    <p class="shadow">This is <span class="shadow"> DATA </span> Para</p>
+    <p>This is Para</p>
+  </body>
+</html>

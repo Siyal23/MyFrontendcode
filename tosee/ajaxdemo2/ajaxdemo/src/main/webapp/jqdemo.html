@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#userId").blur(function() {
+			/* userid = this.value;
+			url = "http://localhost:8080/ajaxdemo/verifyid/verifyUser";
+			$.post(url,{'userId':userid},function(data){
+				if(data==1){
+					$("#msg").text("User Already Exist").css("color","red");
+				}else{
+					$("#msg").text("User Available").css("color","green");
+				}
+			}); */
+			$.ajax({
+				method : "POST",
+				dataType : "json",
+				url : "http://localhost:8080/ajaxdemo/verifyid/verifyUser",
+				data : {
+					'userId' : $("#userId").val()
+				},
+				success : function(data) {
+					$("#msg").text(data);
+				}
+			});
+		});
+		
+		$("#getusers").click(function(){
+			let url = "http://localhost:8080/ajaxdemo/verifyid/getallusers";
+			$.getJSON(url,function(data){
+				console.table(data);
+				for(index in data){
+					$("#userrecord").append(`<tr><td>${data[index].userId}</td><td>${data[index].uname}</td><td>${data[index].ucity}</td></tr>`).css("color","red");
+				}
+			});
+		});
+	});
+
+
+</script>
+</head>
+<body>
+	<form action="savenewuser" enctype="application/x-www-form-urlencoded">
+		<label>UserID : </label> <input type="text" name="userId" id="userId"><span
+			id="msg"></span><br> <label>Password : </label> <input
+			type="password"><br> <input type="submit"
+			value="Save User" disabled="disabled" id="submitbutton">
+	</form>
+	<input type="button" value="Get All Users" id="getusers">
+	<h1>User List</h1>
+	 <table id="userrecord"></table>
+</body>
+</html>
